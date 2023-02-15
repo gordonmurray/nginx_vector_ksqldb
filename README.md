@@ -199,8 +199,6 @@ I get a response like the one below, showing 16 visitors, sam as quergin the vie
 ]
 ```
 
-
-
-While this is a quick and basic example, I really like the results.  Wether it is Vector or something like Debezium populating topics on Kafka, kSQLDB can query the data readily using SQL, I can create a marerialized view that updates as new information comes in and I can use Curl to get this information too.
+While this is a quick and basic example, I really like the results.  Wether it is Vector or something like Debezium populating topics on Kafka, kSQLDB can query the data readily using SQL, I can create a materialized view that updates as new information comes in and I can use Curl to get this information too.
 
 Theres plenty more to learn, like how long can kafka hold the data, how to recover if there is a break in the data and in general handle a much larger volume of data.
