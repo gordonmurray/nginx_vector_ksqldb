@@ -139,7 +139,7 @@ show streams;
 select * from logs;
 ```
 
-IMAGE
+![query ksqldb stream](https://github.com/gordonmurray/nginx_vector_ksqldb/blob/main/files/ksqldb_select_stream_logs.png?raw=true)
 
 To try out the materialized view I created a visitors table:
 
@@ -153,7 +153,7 @@ And query the table using
 select * from visitors;
 ```
 
-IMAGE
+![query ksqldb materialized view](https://github.com/gordonmurray/nginx_vector_ksqldb/blob/main/files/ksqldb_select_materialized_view.png?raw=true)
 
 I can use Curl to query the ksqldb server taking examples from the API guide at https://docs.ksqldb.io/en/latest/developer-guide/api/
 
