@@ -1,0 +1,17 @@
+[sources.my_source_id]
+type = "file"
+ignore_older_secs = 600
+include = [ "/var/log/nginx/access.log" ]
+read_from = "beginning"
+
+
+[sinks.my_sink_id]
+type = "kafka"
+inputs = [ "my_source_id" ]
+bootstrap_servers = ""
+key_field = "nginx"
+topic = "nginx-logs"
+compression = "none"
+
+  [sinks.my_sink_id.encoding]
+  codec = "json"
