@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Vector and Kafka example with Alpine.js</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body>
+
+    <div x-data="{ count: null }">
+        <button x-on:click="
+          fetch('http://18.202.217.215:8088/query', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+              ksql: 'SELECT COUNT FROM counter;'
+            })
+          })
+          .then(response => response.json())
+          .then(data => count = data[1].row.columns[0])
+        ">
+            Get log count
+        </button>
+        <div x-show="count !== null">
+            <span x-text="count"></span>
+        </div>
+    </div>
+
+</body>
+
+</html>
